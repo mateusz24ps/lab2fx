@@ -2,13 +2,10 @@ package com.example.lab2fx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
     @FXML
     private TextField promien;
     @FXML
@@ -16,22 +13,28 @@ public class HelloController {
     @FXML
     private TextField grubosc;
     @FXML
-    public Button btnMain;
+    private TextArea stal;
+    @FXML
+    private TextArea nier;
+
 
     @FXML
-    public void onBtnAction(ActionEvent actionEvent){
-        System.out.println("");
-    }
     int r,h,grub;
+    @FXML
+
     public void submit(ActionEvent event){
         r = Integer.parseInt(promien.getText());
         h = Integer.parseInt(wysokosc.getText());
         grub = Integer.parseInt(grubosc.getText());
-        System.out.println();
+
+        Double pole = (2*3.14*r*r+2*3.14*r*h);
+
+        stal.setText("Stal waży: " + Double.toString(pole*7.85) + " kg. I kosztuje: " + (pole*10*3) +" zł.");
+
+        //nier.setText(toString("Stal nierdzewna waży: " + pole*7.85 +" kg."));
+
+        nier.setText("Stal nierdzewna waży: " + Double.toString(pole*10) + " kg. I kosztuje: " + (pole*10*5) +" zł.");
     }
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+
 }

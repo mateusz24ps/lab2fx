@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
@@ -9,8 +10,10 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TextField fx:id="promien" promptText="Promień" />
-   <TextField fx:id="wysokosc" promptText="Wysokość" />
-   <TextField fx:id="grubosc" promptText="Grubość" />
+   <TextField fx:id="promien" promptText="Promień [cm]" />
+   <TextField fx:id="wysokosc" promptText="Wysokość [cm]" />
+   <TextField fx:id="grubosc" promptText="Grubość [mm]" />
     <Button onAction="#submit" text="Oblicz" textAlignment="CENTER" />
+   <TextArea fx:id="stal" prefHeight="200.0" prefWidth="200.0" promptText="Blacha stalowa " />
+   <TextArea fx:id="nier" prefHeight="200.0" prefWidth="200.0" promptText="Blacha stalowa nierdzewna" />
 </VBox>
